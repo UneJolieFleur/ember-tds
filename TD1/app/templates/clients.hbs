@@ -1,0 +1,9 @@
+
+  {{#each model as |client index|}}
+    <div class="list-group-item ">
+      {{client.nom}}
+      {{#link-to "client-d" index}} + {{/link-to}}
+    </div>
+  {{/each}}
+
+{{outlet}}

@@ -1,0 +1,16 @@
+<h4>/ex1 </h4><br /><br />
+<div class="container">
+  <div class="list-group-item active"> Note </div>
+  <div class="list-group-item "> Message :<br /><br />{{textarea  maxlength="100" value = model.content cols="66"
+                                                              rows="1" placeholder="Entrez votre message.."}}</div>
+  <div class="list-group-item ">
+    <button type="button" class="btn btn-primary" {{action "save" model }} >Sauvegarder</button>
+    <button type="button" class="btn btn-secondary" {{action "reset" model }} >Effacer</button>
+  </div>
+  <div class="list-group-item ">Vous avez saisi : {{model.content}} </div>
+  <div class="list-group-item " >Taille actuelle : {{model.size}} caractères.</div>
+  <div class={{model.warning}} >Taille restante : {{model.reste}} caractères.</div>
+
+</div>
+
+{{outlet}}
