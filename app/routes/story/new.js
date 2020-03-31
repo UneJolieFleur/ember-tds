@@ -2,9 +2,12 @@ import Route from '@ember/routing/route';
 import EmberObject from '@ember/object';
 import RSVP from 'rsvp';
 
-export default Route.extend({
-    model({project_id}) {
-      return RSVP.hash({
+export default Route.extend
+({
+    model({project_id}) 
+    {
+      return RSVP.hash
+      ({
         colors: ['black', 'blue', 'green', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow', 'positive', 'negative'],
         project: this.get('store').findRecord('project', project_id),
         story: EmberObject.create(),
@@ -13,12 +16,15 @@ export default Route.extend({
         tags: this.get('store').findAll('tag')
       });
     },
-    actions: {
-      addStory(data, project) {
+    actions: 
+    {
+      addStory(data, project) 
+      {
         data.set('project', project);
         this.get('store').createRecord('story', data).save().then(()=>this.transitionTo('projects'));
       },
-      addTag(data) {
+      addTag(data) 
+      {
         this.get('store').createRecord('tag', data).save();
       }
     }
