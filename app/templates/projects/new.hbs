@@ -46,7 +46,7 @@
         {{/ui-dropdown}}
       </div>
 
-      {{#link-to "projects" }}<button class="ui green button" type="submit" {{action "addProject" model}}>Ajouter</button>{{/link-to}}
+      {{#link-to "projects" }}<button class="ui green button" type="submit" {{action "addProject" model.projects}}>Ajouter</button>{{/link-to}}
       <a href="http://localhost:4200/projects" class="ui button">Annuler</a>
     </form>
   </div>

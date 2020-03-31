@@ -1,16 +1,12 @@
 import Route from '@ember/routing/route';
 
-export default Route.extend
-({
-  model()
-  {
+export default Route.extend({
+  model(){
     return this.get('store').findRecord('developer');
   },
 
-  actions:
-  {
-    editDeveloper(data)
-    {
+  actions:{
+    editDeveloper(data){
       data.save();
       this.transitionTo("developers")
     }
