@@ -1,0 +1,18 @@
+<div class="ui container">
+  <div class="ui segment">
+    <div class="ui segment">
+      <i style="float:left" class="large table icon">Models\Developers</i>
+      <h5>New Object creation</h5>
+    </div>
+
+    <form class="ui form">
+      <div class="field">
+        <label>Identity</label>
+        <Input type="text" name="identity" @value={{model.identity}}></Input>
+      </div>
+      {{#link-to "developers" }}<button class="ui green button" type="submit" {{action "addDeveloper" model}}>Ajouter</button>{{/link-to}}
+      <a href="http://localhost:4200/developers" class="ui button">Annuler</a>
+    </form>
+  </div>
+</div>
+{{outlet}}

@@ -1,0 +1,9 @@
+<div class="ui container">
+  <div class="ui segment">
+    <i class="question circle large icon"></i>
+    Confirmez la suppresion de '{{model.name}}'
+    <button class="ui green button" {{action "DeleteProject" model}}>Confimer</button>
+    {{#link-to "projects"}}<button class="ui button">Annuler</button>{{/link-to}}
+  </div>
+</div>
+{{outlet}}

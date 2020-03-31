@@ -1,0 +1,37 @@
+<div class="ui container">
+  <div>
+    <i style="float:left" class="large table icon">Models\Project</i>
+    <br>
+    <br>
+  </div>
+
+  {{#link-to "projects.new" }}<button class="ui orange button">Add a new models\Project...</button>{{/link-to}}
+  <table class="ui celled table">
+    <thead>
+    <tr><th>Name</th>
+      <th>Descriptif</th>
+      <th>StartDate</th>
+      <th>DueDate</th>
+    </tr></thead>
+    <tbody>
+    {{#each model as |project|}}
+      <tr>
+          <td data-label="Name">{{project.name}}</td>
+          <td data-label="Descriptif">{{project.descriptif}}</td>
+          <td data-label="SartDate">{{project.startDate}}</td>
+          <td data-label="DueDate">
+            {{project.dueDate}}
+            <div style="float:right">
+              <LinkTo class="circular ui basic icon button"  @route="project" @model={{project.id}}><i class="icon eye"></i></LinkTo>
+              <LinkTo @route="projects.edit"  @model={{project}} class="btn btn-info">{{fa-icon "table"}}</LinkTo>
+              <LinkTo @route="projects.delete" @model={{project}}  class="btn btn-danger">{{fa-icon "times"}}</LinkTo>
+            </div>
+          </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+{{outlet}}

@@ -1,0 +1,9 @@
+<div class="ui container">
+  <div class="ui segment">
+    <i class="question circle large icon"></i>
+    Confirmez la suppresion de '{{model.identity}}'
+    <button class="ui green button" {{action "DeleteDeveloper" model}}>Confimer</button>
+    {{#link-to "developers"}}<button class="ui button">Annuler</button>{{/link-to}}
+  </div>
+</div>
+{{outlet}}
